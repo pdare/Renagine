@@ -1,8 +1,8 @@
 -- premake5.lua
-workspace "New Project"
+workspace "Renagine"
    architecture "x64"
    configurations { "Debug", "Release", "Dist" }
-   startproject "App"
+   startproject "Renagine-App"
 
    -- Workspace-wide build options for MSVC
    filter "system:windows"

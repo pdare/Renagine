@@ -1,4 +1,4 @@
-project "App"
+project "Renagine-App"
    kind "ConsoleApp"
    language "C++"
    cppdialect "C++20"
@@ -17,7 +17,7 @@ project "App"
 
    links
    {
-      "Core"
+      "Renagine-Core"
    }
 
    targetdir ("../Binaries/" .. OutputDir .. "/%{prj.name}")
