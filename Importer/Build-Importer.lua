@@ -1,5 +1,5 @@
-project "Renagine-App"
-   kind "ConsoleApp"
+project "Renagine-Importer"
+   kind "StaticLib"
    language "C++"
    cppdialect "C++20"
    targetdir "Binaries/%{cfg.buildcfg}"
@@ -9,17 +9,7 @@ project "Renagine-App"
 
    includedirs
    {
-      "Source",
-
-	  -- Include Core
-	  "../Core/Source",
-      "../Importer/Source"
-   }
-
-   links
-   {
-      "Renagine-Core",
-      "Renagine-Importer"
+      "Source"
    }
 
    targetdir ("../Binaries/" .. OutputDir .. "/%{prj.name}")
@@ -27,7 +17,7 @@ project "Renagine-App"
 
    filter "system:windows"
        systemversion "latest"
-       defines { "WINDOWS" }
+       defines { }
 
    filter "configurations:Debug"
        defines { "DEBUG" }

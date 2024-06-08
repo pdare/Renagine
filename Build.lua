@@ -14,4 +14,8 @@ group "Core"
 	include "Core/Build-Core.lua"
 group ""
 
+group "Importer"
+   include "Importer/Build-Importer.lua"
+group ""
+
 include "App/Build-App.lua"
