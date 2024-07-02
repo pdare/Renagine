@@ -12,3 +12,8 @@ Makefile
 
 # Exclude
 !Vendor/Binaries
+
+*.obj
+*.png
+*.jpg
+*.mtl
