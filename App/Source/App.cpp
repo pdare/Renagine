@@ -5,6 +5,7 @@
 int main()
 {
 	Core::PrintHelloWorld();
-	Renderer::run();
+	Renderer* render_pass = new Renderer();
+	render_pass->run();
 	Importer::Import();
 }

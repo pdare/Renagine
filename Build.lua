@@ -18,4 +18,8 @@ group "Importer"
    include "Importer/Build-Importer.lua"
 group ""
 
+group "Renderer"
+   include "Renderer/Build-Renderer.lua"
+group ""
+
 include "App/Build-App.lua"

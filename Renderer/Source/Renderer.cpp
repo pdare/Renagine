@@ -113,6 +113,7 @@ struct UniformBufferObject {
 class Renderer {
 public:
     void run() {
+        std::cout << "running renderer";
         initWindow();
         initVulkan();
         mainLoop();
@@ -196,7 +197,7 @@ private:
     }
 
     static void framebufferResizeCallback(GLFWwindow* window, int width, int height) {
-        auto app = reinterpret_cast<HelloTriangleApplication*>(glfwGetWindowUserPointer(window));
+        auto app = reinterpret_cast<Renderer*>(glfwGetWindowUserPointer(window));
         app->framebufferResized = true;
     }
 

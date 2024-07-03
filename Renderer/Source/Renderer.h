@@ -26,19 +26,20 @@
 #include <cstring>
 #include <cstdlib>
 #include <cstdint>
+#include <stdint.h>
 #include <limits>
 #include <array>
 #include <optional>
 #include <set>
 #include <unordered_map>
 
-const uint32_t WIDTH;
-const uint32_t HEIGHT;
+const uint32_t WIDTH = 800;
+const uint32_t HEIGHT = 600;
 
 const std::string MODEL_PATH;
 const std::string TEXTURE_PATH;
 
-const int MAX_FRAMES_IN_FLIGHT;
+const int MAX_FRAMES_IN_FLIGHT = 2;
 
 const std::vector<const char*> validationLayers;
 
@@ -50,7 +51,7 @@ const bool enableValidationLayers = false;
 const bool enableValidationLayers = true;
 #endif
 
-VkRestult CreateDebugUtilsMessengerEXT(VkInstance instance, const VkDebugUtilsMessengerCreateInfoEXT* pCreateInfo, const VkAllocationCallbacks* pAllocator, VkDebugUtilsMessengerEXT* pDebugMessenger);
+VkResult CreateDebugUtilsMessengerEXT(VkInstance instance, const VkDebugUtilsMessengerCreateInfoEXT* pCreateInfo, const VkAllocationCallbacks* pAllocator, VkDebugUtilsMessengerEXT* pDebugMessenger);
 void DestroyDebugUtilsMessengerEXT(VkInstance instance, VkDebugUtilsMessengerEXT debugMessenger, const VkAllocationCallbacks* pAllocator);
 
 struct QueueFamilyIndices {
@@ -89,11 +90,11 @@ struct UniformBufferObject {
     alignas(16) glm::mat4 model;
     alignas(16) glm::mat4 view;
     alignas(16) glm::mat4 proj;
-}
+};
 
 class Renderer {
     public:
-        void run();
+        void run() {};
     private:
         GLFWwindow* window;
 
@@ -230,4 +231,4 @@ class Renderer {
         bool checkValidationLayerSupport();
         static std::vector<char> readFile(const std::string& filename);
         static VKAPI_ATTR VkBool32 VKAPI_CALL debugCallBack(VkDebugUtilsMessageSeverityFlagBitsEXT messageSeverity, VkDebugUtilsMessageTypeFlagsEXT messageType, const VkDebugUtilsMessengerCallbackDataEXT* pCallbackData, void* pUserData);
-}
+};
